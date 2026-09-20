@@ -81,7 +81,7 @@ export default function Hero() {
                     }}
                     className={`absolute ${pill.className} flex items-center gap-2 rounded-full border border-white/10 bg-[#0f1727]/90 px-3 py-2 text-xs font-medium text-white/90 shadow-[0_15px_30px_rgba(0,0,0,0.25)] backdrop-blur-sm`}
                   >
-                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#1a2437] text-[#dfe7ff]">
+                    <span className="flex h-7 w-7 items-center justify-center rounded-full border border-white/10 bg-[#1a2437] text-[#dfe7ff] ring-1 ring-white/5">
                       <pill.icon size={12} />
                     </span>
                     {pill.label}
