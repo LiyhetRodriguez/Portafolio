@@ -17,29 +17,29 @@ export default function ProfileCard() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.5 }}
-      className="relative -mt-8 md:-mt-16 mx-auto max-w-content px-6"
+      className="relative mx-auto -mt-6 max-w-content px-6 md:-mt-10"
     >
-      <div className="rounded-[28px] border border-line bg-surface/90 backdrop-blur-sm p-5 sm:p-6 shadow-[0_18px_50px_rgba(0,0,0,0.35)]">
-        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5">
-          <div className="shrink-0 h-24 w-24 rounded-[22px] bg-gradient-to-br from-accent/90 via-accent-dim to-surface flex items-center justify-center ring-1 ring-white/10 overflow-hidden">
-            <User size={38} className="text-white/90" />
+      <div className="rounded-[26px] border border-white/10 bg-[#0f1521]/90 p-5 shadow-[0_20px_50px_rgba(0,0,0,0.25)] backdrop-blur-sm sm:p-6">
+        <div className="flex flex-col items-center gap-5 sm:flex-row sm:items-center">
+          <div className="flex h-20 w-20 items-center justify-center overflow-hidden rounded-[20px] bg-gradient-to-br from-[#1f2a3f] via-[#0f172a] to-[#091018] ring-1 ring-white/10">
+            <User size={34} className="text-white/90" />
           </div>
 
           <div className="flex-1 text-center sm:text-left">
-            <h3 className="font-display text-[1.65rem] font-semibold text-ink">
-              {profile.name} <span className="text-accent-soft">✓</span>
+            <h3 className="text-[1.5rem] font-semibold text-white">
+              {profile.name} <span className="text-[#44ffb2]">✓</span>
             </h3>
-            <p className="text-muted text-sm mt-1">@danieth · dev</p>
+            <p className="mt-1 text-sm text-slate-300">@danieth · dev</p>
 
-            <div className="mt-4 flex flex-wrap items-center justify-center sm:justify-start gap-3">
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-2 sm:justify-start">
               {stats.map(({ icon: Icon, label, value }) => (
                 <div
                   key={label}
-                  className="flex items-center gap-2 rounded-full bg-surface-hi px-2.5 py-1.5 text-[11px] text-muted"
+                  className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-2.5 py-1.5 text-[11px] text-slate-200"
                 >
-                  <Icon size={12} className="text-accent-soft" />
+                  <Icon size={12} className="text-[#44ffb2]" />
                   <span>{label}</span>
-                  <span className="font-medium text-ink">{value}</span>
+                  <span className="font-medium text-white">{value}</span>
                 </div>
               ))}
             </div>
