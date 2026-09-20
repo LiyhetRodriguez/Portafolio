@@ -21,31 +21,30 @@ html {
 }
 
 body {
-  background-color: #0a0d14;
+  background-color: #05070d;
   color: #e9ebf2;
   font-feature-settings: "ss01" on, "cv01" on;
 }
 
 ::selection {
-  background-color: #7c6cf0;
-  color: #0a0d14;
+  background-color: #44ffb2;
+  color: #05070d;
 }
 
-/* thin, quiet scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0d14;
+  background: #05070d;
 }
 ::-webkit-scrollbar-thumb {
-  background: #212736;
+  background: #1d2536;
   border-radius: 999px;
-  border: 2px solid #0a0d14;
+  border: 2px solid #05070d;
 }
 
 :focus-visible {
-  outline: 2px solid #a79bff;
+  outline: 2px solid #44ffb2;
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -55,8 +54,8 @@ body {
 }
 
 .bg-grid {
-  background-image: linear-gradient(to right, #ffffff08 1px, transparent 1px),
-    linear-gradient(to bottom, #ffffff08 1px, transparent 1px);
+  background-image: linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px);
   background-size: 44px 44px;
 }
 

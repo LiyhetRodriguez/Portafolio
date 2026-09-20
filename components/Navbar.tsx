@@ -42,12 +42,12 @@ export default function Navbar() {
           : "bg-transparent border-b border-transparent"
       )}
     >
-      <nav className="mx-auto max-w-content px-6 h-16 flex items-center justify-between">
+      <nav className="mx-auto max-w-content px-6 h-20 flex items-center justify-between">
         <a
           href="#inicio"
           className="font-display font-semibold text-lg text-ink tracking-tight"
         >
-          {profile.name === "[MI NOMBRE]" ? "tu.nombre()" : profile.name}
+          {profile.name}
         </a>
 
         <ul className="hidden md:flex items-center gap-8">
@@ -65,9 +65,9 @@ export default function Navbar() {
 
         <a
           href="#contacto"
-          className="hidden md:inline-flex items-center rounded-full border border-line px-4 py-2 text-sm text-ink hover:border-accent-soft hover:text-accent-soft transition-colors"
+          className="hidden md:inline-flex items-center rounded-full border border-line bg-surface/60 px-4 py-2 text-sm text-ink hover:border-accent-soft hover:text-accent-soft transition-colors"
         >
-          Hablemos
+          Contáctame
         </a>
 
         <button
