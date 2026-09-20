@@ -1,28 +1,37 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Instagram, Linkedin, MessageCircle } from "lucide-react";
+import {
+  Bot,
+  Briefcase,
+  Code2,
+  Github,
+  Instagram,
+  Linkedin,
+  Megaphone,
+  MessageCircle,
+} from "lucide-react";
 import { profile, socialLinks } from "@/data/social";
 
 const floatingPills = [
-  { label: "Software", className: "left-4 top-12 md:left-8" },
-  { label: "Marketing", className: "right-5 top-16 md:right-10" },
-  { label: "Chatbot", className: "left-8 bottom-16 md:left-10" },
+  { label: "Software", icon: Code2, className: "left-2 top-12 md:left-6" },
+  { label: "Marketing", icon: Megaphone, className: "right-2 top-16 md:right-8" },
+  { label: "Chatbot", icon: Bot, className: "left-6 bottom-14 md:left-10" },
 ];
 
 export default function Hero() {
   return (
-    <section id="inicio" className="relative overflow-hidden bg-[#05070d] pb-20 pt-10 md:pb-24 md:pt-6">
+    <section id="inicio" className="relative overflow-hidden bg-[#05070d] pb-20 pt-8 md:pb-24 md:pt-6">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(68,255,178,0.12),transparent_30%),radial-gradient(circle_at_bottom_left,rgba(111,130,255,0.12),transparent_35%)]" />
       <div className="absolute inset-0 bg-grid opacity-20 [mask-image:radial-gradient(circle_at_center,black_28%,transparent_82%)]" />
 
-      <div className="relative mx-auto max-w-[1300px] px-6 lg:px-10">
+      <div className="relative mx-auto max-w-[1300px] px-5 sm:px-6 lg:px-10">
         <div className="mx-auto max-w-[1200px]">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45 }}
-            className="mb-3 flex justify-center"
+            className="mb-4 flex justify-center"
           >
             <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[10px] font-medium uppercase tracking-[0.22em] text-white/80 backdrop-blur-sm">
               <span className="h-2 w-2 rounded-full bg-[#44ffb2] shadow-[0_0_14px_rgba(68,255,178,0.9)]" />
@@ -35,11 +44,11 @@ export default function Hero() {
               initial={{ opacity: 0, x: -18 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.55 }}
-              className="w-full max-w-[520px] text-center lg:text-left"
+              className="w-full max-w-[500px] text-center lg:text-left"
             >
               <h1 className="text-5xl font-black leading-[0.9] tracking-[-0.07em] text-white sm:text-6xl lg:text-[5.5rem]">
                 <span className="block">Páginas</span>
-                <span className="block">convertir</span>
+                <span className="block text-[#44ffb2]">convierten</span>
               </h1>
 
               <div className="mt-5 flex items-center justify-center gap-3 rounded-full border border-white/10 bg-[#111927]/80 px-4 py-2.5 text-sm text-white/90 shadow-[0_15px_40px_rgba(0,0,0,0.2)] backdrop-blur-sm lg:justify-start">
@@ -58,19 +67,33 @@ export default function Hero() {
                 {floatingPills.map((pill, index) => (
                   <motion.div
                     key={pill.label}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2 + index * 0.12, duration: 0.45 }}
-                    className={`absolute ${pill.className} hidden items-center gap-2 rounded-full border border-white/10 bg-[#0f1727]/90 px-3 py-2 text-xs font-medium text-white/90 shadow-[0_15px_30px_rgba(0,0,0,0.25)] backdrop-blur-sm md:flex`}
+                    initial={{ opacity: 0, y: 18 }}
+                    animate={{
+                      opacity: 1,
+                      y: [0, -8, 0],
+                      rotate: [0, 1, 0],
+                    }}
+                    transition={{
+                      delay: 0.2 + index * 0.12,
+                      duration: 2.8,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                    className={`absolute ${pill.className} flex items-center gap-2 rounded-full border border-white/10 bg-[#0f1727]/90 px-3 py-2 text-xs font-medium text-white/90 shadow-[0_15px_30px_rgba(0,0,0,0.25)] backdrop-blur-sm`}
                   >
-                    <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#1a2437] text-[9px] font-bold text-[#dfe7ff]">
-                      {pill.label.slice(0, 2).toUpperCase()}
+                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#1a2437] text-[#dfe7ff]">
+                      <pill.icon size={12} />
                     </span>
                     {pill.label}
                   </motion.div>
                 ))}
 
-                <div className="absolute left-1/2 top-1/2 w-[92%] max-w-[550px] -translate-x-1/2 -translate-y-1/2 rounded-[28px] border border-white/10 bg-[linear-gradient(180deg,rgba(18,21,31,0.9),rgba(9,11,17,0.97))] p-3 shadow-[0_35px_80px_rgba(0,0,0,0.45)]">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.94, y: 15 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{ duration: 0.7, ease: "easeOut" }}
+                  className="absolute left-1/2 top-1/2 w-[92%] max-w-[550px] -translate-x-1/2 -translate-y-1/2 rounded-[28px] border border-white/10 bg-[linear-gradient(180deg,rgba(18,21,31,0.9),rgba(9,11,17,0.97))] p-3 shadow-[0_35px_80px_rgba(0,0,0,0.45)]"
+                >
                   <div className="overflow-hidden rounded-[22px] border border-white/10 bg-[linear-gradient(180deg,#dfe1e7_0%,#c1c5cf_100%)]">
                     <div className="relative h-[260px] md:h-[330px]">
                       <div className="absolute inset-x-[8%] top-0 h-10 rounded-b-[22px] bg-[#111827]/70" />
@@ -98,45 +121,34 @@ export default function Hero() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </motion.div>
           </div>
 
           <div className="mt-6 flex justify-center lg:justify-start">
             <div className="flex items-center gap-4">
-              <a
-                href={socialLinks.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-[#141b29] text-white/80 transition hover:-translate-y-0.5 hover:border-[#6ae7ff] hover:text-white"
-              >
-                <Github size={18} />
-              </a>
-              <a
-                href={socialLinks.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-[#141b29] text-white/80 transition hover:-translate-y-0.5 hover:border-[#6ae7ff] hover:text-white"
-              >
-                <Linkedin size={18} />
-              </a>
-              <a
-                href={socialLinks.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-[#141b29] text-white/80 transition hover:-translate-y-0.5 hover:border-[#6ae7ff] hover:text-white"
-              >
-                <MessageCircle size={18} />
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-[#141b29] text-white/80 transition hover:-translate-y-0.5 hover:border-[#6ae7ff] hover:text-white"
-              >
-                <Instagram size={18} />
-              </a>
+              {[
+                { href: socialLinks.github, icon: Github },
+                { href: socialLinks.linkedin, icon: Linkedin },
+                { href: socialLinks.whatsapp, icon: MessageCircle },
+                { href: "https://instagram.com", icon: Instagram },
+              ].map(({ href, icon: Icon }, index) => (
+                <motion.a
+                  key={href}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 + index * 0.08, duration: 0.4 }}
+                  whileHover={{ y: -4, scale: 1.05 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-[#141b29] text-white/80 shadow-[0_8px_18px_rgba(0,0,0,0.18)] transition"
+                >
+                  <Icon size={18} />
+                </motion.a>
+              ))}
             </div>
           </div>
         </div>
